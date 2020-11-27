@@ -4,10 +4,15 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import LoginScreen from './components/loginScreen/LoginScreen.js';
-import HomeScreen from '/root/Swamp-Go/components/profile/HomeScreen.js'
-const Stack = createStackNavigator();
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import LoginScreen from '/root/SwampGo/components/loginScreen/LoginScreen.js';
+import DriverHomeScreen from './components/driver/DriverHomeScreen.js'
+import AdminHomeScreen from './components/admin/AdminHomeScreen.js'
+import SponsorHomeScreen from './components/sponsor/SponsorHomeScreen.js'
 
+
+const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
@@ -18,7 +23,10 @@ export default function App() {
           component={LoginScreen}
           options={{ title: 'Log In' }}
         />
-        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Driver Home" component={DriverHomeScreen} />
+        <Stack.Screen name="Sponsor Home" component={SponsorHomeScreen} />
+        <Stack.Screen name="Admin Home" component={AdminHomeScreen} />
+
       </Stack.Navigator>
     </NavigationContainer>
   );

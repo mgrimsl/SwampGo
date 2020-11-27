@@ -3,16 +3,16 @@ import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { View, Text} from 'react-native';
 
-const HomeScreen = ({ navigation, route }) => {
+const DriverHistory = ({ navigation, route }) => {
 
 
 
   return (
     <View>
-        <Text>You Logged In as {route.params.name}</Text>
+        <Text>History</Text>
     </View>
   );
 };
 
-export default HomeScreen
+export default DriverHistory
 ;
