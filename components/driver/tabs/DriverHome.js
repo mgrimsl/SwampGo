@@ -4,17 +4,19 @@ import { NavigationContainer } from '@react-navigation/native';
 import { View, Text} from 'react-native';
 
 const DriverHome = ({ navigation, route }) => {
+  let userObj = route.params
 
-
-  fetch("http://54.162.93.0/swampApi/", {
-    method : 'GET'
-  })
-  .then(res => res.json())
-  .then(data => {console.log(data)})
-  .catch(err => console.error(err))
   return (
     <View>
-        <Text>Home</Text>
+      <View>
+        <Text>{userObj.fname} {userObj.lname}</Text>
+      </View>
+      <View>
+        <Text>{userObj.email}</Text>
+      </View>
+      <View>
+        <Text>Points: {userObj.points}</Text>
+      </View>
     </View>
   );
 };

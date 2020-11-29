@@ -9,7 +9,7 @@ import LoginScreen from '/root/SwampGo/components/loginScreen/LoginScreen.js';
 import DriverHomeScreen from './components/driver/DriverHomeScreen.js'
 import AdminHomeScreen from './components/admin/AdminHomeScreen.js'
 import SponsorHomeScreen from './components/sponsor/SponsorHomeScreen.js'
-
+import RegistrationScreen from './components/loginScreen/RegistrationScreen.js'
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -22,6 +22,10 @@ export default function App() {
           name="Login"
           component={LoginScreen}
           options={{ title: 'Log In' }}
+        />
+        <Stack.Screen
+          name="Registration"
+          component={RegistrationScreen}
         />
         <Stack.Screen name="Driver Home" component={DriverHomeScreen} />
         <Stack.Screen name="Sponsor Home" component={SponsorHomeScreen} />
